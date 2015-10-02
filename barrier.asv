@@ -1,0 +1,9 @@
+function y = barrier(A,b,a,x)
+v=b
+    v(abs(x)<a) = -a^2*log(1-(x/a)^2)
+ 
+    v(abs(x)>a)= Inf
+
+
+
+end

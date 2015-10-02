@@ -1,0 +1,33 @@
+
+m=100; n=30;
+A = randn(m,n);
+b = randn(m,1);
+
+%l1 norm
+cvx_begin
+    variable x1(n)
+    minimize(norm(A*x1-b,1))
+cvx_end
+
+%l2 norm
+cvx_begin
+    variable x2(n)
+    minimize(norm(A*x1-b,2))
+cvx_end
+
+%deadzone penalty
+a=0.5
+
+cvx_begin
+    variable x3(n)
+    minimize(sum(max(abs(A*x3-b)-a,0)))
+cvx_end
+
+%log-barrier penalty
+a=0.8;
+p=path;
+path(p,'E:\courseUCD\15fall\math258');
+cvx_begin
+    variable x4(n)
+    minimize(barrier(A,b,a,x4))
+cvx_end
