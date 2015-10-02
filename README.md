@@ -2,4 +2,4 @@
 HW1
 =======================================
 
-The wp.pdf is the report. See hw1.m for codes.
+The report.pdf is the report. See hw1.m for codes.
