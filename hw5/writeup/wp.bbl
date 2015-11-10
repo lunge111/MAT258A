@@ -1,0 +1,81 @@
+% $ biblatex auxiliary file $
+% $ biblatex version 1.7 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\entry{efron2004least}{article}{}
+  \true{moreauthor}
+  \name{author}{4}{}{%
+    {{}%
+     {Efron}{E.}%
+     {Bradley}{B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Hastie}{H.}%
+     {Trevor}{T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Johnstone}{J.}%
+     {Iain}{I.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Tibshirani}{T.}%
+     {Robert}{R.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Institute of Mathematical Statistics}%
+  }
+  \strng{namehash}{EB+1}
+  \strng{fullhash}{EBHTJITR+1}
+  \field{sortinit}{E}
+  \field{number}{2}
+  \field{pages}{407\bibrangedash 499}
+  \field{title}{Least angle regression}
+  \field{volume}{32}
+  \field{journaltitle}{The Annals of statistics}
+  \field{year}{2004}
+\endentry
+
+\entry{tibshirani1996regression}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Tibshirani}{T.}%
+     {Robert}{R.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {JSTOR}%
+  }
+  \strng{namehash}{TR1}
+  \strng{fullhash}{TR1}
+  \field{sortinit}{T}
+  \field{pages}{267\bibrangedash 288}
+  \field{title}{Regression shrinkage and selection via the lasso}
+  \field{journaltitle}{Journal of the Royal Statistical Society. Series B
+  (Methodological)}
+  \field{year}{1996}
+\endentry
+
+\lossort
+\endlossort
+
+\endinput

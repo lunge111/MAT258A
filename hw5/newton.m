@@ -1,5 +1,6 @@
 function [x,fc,itc] = newton(x0,obj,i,maxit,tol,qusi,eps,lam,rho)
 c=0.0001;
+n=length(x0);
 [fc,gc,hc]=obj(i,x0,lam,rho); 
 [P,D]=eig(hc);
 if(min(diag(D))<eps)
@@ -19,9 +20,9 @@ while(norm(gc) > tol*norm(g0) & itc <= maxit)
 		alpha=alpha/2;
   fg= fc + c*alpha*(gc'*p);
 		xt=xc+alpha*p;
-		ft=obj(i,xt,,lam,rho);
+		ft=obj(i,xt,lam,rho);
 	cout=cout+1;
-    if(cout>20)
+    if(cout>40)
         break
     end
     end
@@ -39,9 +40,9 @@ while(norm(gc) > tol*norm(g0) & itc <= maxit)
         [P,D]=eig(hc);
         if(min(diag(D))<eps)
          D=diag(D);          
-    D(D<=1e-8)=eps;       
+    D(D<=1e-4)=eps;       
     D=diag(D); 
-    hc=P*D*inv(P)
+    hc=P*D*inv(P);
          H=inv(hc);
         end
     end   

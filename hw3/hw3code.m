@@ -1,3 +1,4 @@
+res=zeros(18,2)
 
 for i=1:18
 [x,f,it]=newton(@prob,i,20000,1e-6,0,1e-3);

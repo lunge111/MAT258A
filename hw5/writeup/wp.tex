@@ -1,0 +1,154 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{multirow}
+\usepackage{bm}
+\usepackage{AMSFONTS}
+\usepackage{amssymb}
+\usepackage{latexsym}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{ hyperref}
+\usepackage[style=numeric]{biblatex}
+
+\addbibresource{bibliography.bib}
+
+\textwidth 6.5in
+\textheight 9in
+\topmargin 1pt
+\linespread{1.5}
+\oddsidemargin 0pt
+\begin{document}
+\title{\huge{HW5 }}
+
+
+\author{Yilun Zhang}
+\newtheorem{coro}{\hskip 2em Corollary}[section]
+\newtheorem{remark}[coro]{\hskip 2em Remark}
+\newtheorem{propo}[coro]{\hskip 2em  Proposition}
+\newtheorem{lemma}[coro]{\hskip 2em Lemma}
+\newtheorem{theor}[coro]{\hskip 2em Theorem}
+\newenvironment{prf}{\noindent { proof:} }{\hfill $\Box$}
+\date{\today}
+\maketitle
+\section*{Exercise 1}
+\subsection*{a}
+Let $S_k=\{x:\,||x||^2=1, \,e_i'x=0,\,i=1,2,\cdots,k \}$, $k=1,2,\cdots n-2$, and $S_0=\{x:\,||x||^2=1\}$. Clearly $S_0\supseteq S_1\cdots\supseteq S_{n-1}$. Then \begin{eqnarray*}
+&&\lambda_1=\min_{x\in S_0}x'Qx\\
+&&\cdots\\
+&&\lambda_i=\min_{x\in S_{i-1}}x'Qx\\
+&&\cdots\\
+&&\lambda_n=\min_{x\in S_{n-1}}x'Qx
+\end{eqnarray*}
+Then obviously we have $\lambda_1\le\lambda_2\cdots\le\lambda_n$. Because when $i<j$, the constraint set $S_j$ is subspace of $S_i$, $\lambda_i\ge\lambda_j$.
+
+\subsection*{b}
+By the defination of $e_i$, we have $e_i'e_j=0$ for $i\neq j$ and $||e_i||^2=1$. If we have \[
+\sum_{i=1}^{n}c_ie_i=0
+\] for $c_i\in \mathbb{R}$. For $k=1,2,\cdots,n$\[
+e_k'\sum_{i=1}^{n}c_ie_i=c_k||e_k||^2=c_k =0
+\]
+This implies $c_k=0$. Therefore, $e_1,e_2,\cdots,e_n$ are linearly independent.
+
+\subsection*{c}
+For centain k, the optimization problem is to minimize $x'Qx$ subject to $x'x=1;e'_ix=0, i=1,2,\cdots,k$ the Lagrangian function is \[
+L(x,\lambda^*)=x'Qx+\lambda^*_1(1-x'x)+\sum_{j=2}^{k}\lambda_j^*e'_jx
+\]
+\[
+\triangledown_xL(x,\lambda^*)=2Qx-2\lambda^*_1x+\sum_{j=2}^{k}\lambda_j^*e_j=0
+\]
+
+\[
+e'_k\triangledown_xL(e_k,\lambda^*)=2e_k'Qe_k-2\lambda^*_1=2\lambda_k-2\lambda^*_1=0
+\]
+Then $\lambda_k=\lambda^*_1$ and \[
+\lambda_k=L(e_k,\lambda^*)=\lambda_k+\sum_{j=2}^{k}\lambda_j^*e'_jx
+\Rightarrow \lambda^*_j=0\, for\, j=2,3,\cdots,k\]
+Then
+\[
+\triangledown_xL(e_k,\lambda^*)=2Qe_k-2\lambda_ke_k=0
+\]
+
+$Qe_k=\lambda e_k$, $\lambda_k$ is the eigen value and $e_k$ is the eigen vector.
+\section*{Exercise 2}
+$h(x)=0\Leftrightarrow||h(x)||^2=0$. If there is a Lagrangian multiplier, the gradient w.r.t $x$ is \[
+\triangledown_x L(x,\lambda)=\triangledown f(x) + 2\triangledown h(x)h(x)=0
+\]
+But
+\[
+\triangledown_x L(x^*,\lambda)=\triangledown f(x^*) + 2\triangledown h(x^*)h(x^*)=\triangledown f(x^*)
+\] is not 0. So there is no Lagrangian multiplier.
+\section*{Exercise 3}
+\subsection*{a}
+The optimization problem is \\
+maximize(or minimize)
+\[
+x_1+x_2
+\]
+subject to\[
+x_1^2+x_2^2=2+u
+\]
+Let $x_1=\sqrt{u+2}cos\theta$ and $x_2=\sqrt{u+2}cos\theta$. Then our problem is to maximize(or minimize) $\sqrt{u+2}cos\theta+\sqrt{u+2}cos\theta+\sqrt{u+2}sin\theta$.
+It's easy to see when $x_1=x_2=\frac{\sqrt{2}}{2}\sqrt{u+2}$, the objective function has maximizer $\sqrt{2}\sqrt{u+2}$; when $x_1=x_2=-\frac{\sqrt{2}}{2}\sqrt{u+2}$, the objective function has minmizer $-\sqrt{2}\sqrt{u+2}$, which are also primal function of maximum and minimum.
+
+\subsection*{b}
+For minimization, the Lagrangian function is \[
+L(x_1,x_2,\lambda)=x_1 + x_2 + \lambda(x_1^2+x_2^2-2-u)
+\]
+\[
+\triangledown_{x_1}L(x_1,x_2,\lambda)=1 + 2 \lambda x_1
+\]
+
+\[
+\triangledown_{x_2}L(x_1,x_2,\lambda)=1 + 2 \lambda x_2
+\]
+
+\[
+\triangledown_{\lambda}L(x_1,x_2,\lambda)= x_1^2+x^2-2-u
+\]
+
+we have $\lambda=-\frac{1}{2x_1}=-\frac{1}{2x_1}$, plug in the optimal $x_1,\, x_2$, $\lambda(u)=\frac{\sqrt{2}}{2}(u+2)^{-1/2}$. And $p'(u)=-\frac{\sqrt{2}}{2}(u+2)^{-1/2}=-\lambda(u)$. QED
+\section*{Exercise 4}
+
+The matlab code of this implementation is \begin{verbatim}
+function [x, it] = Alang(i, x0, lam0, rho0, quas,  maxit, tol, c)
+it=0;
+[fc, gc, hc]=prob(i,x0,lam0,rho0);
+x=x0;
+lam=lam0;
+rho=rho0;
+while (norm(gc) > tol & it <= maxit)
+x=newton(x, @prob, i, 10000, 1e-6, quas,1e-4,lam, rho );
+[fc,gc,hc]=prob(i,x , lam, rho)
+if(norm(c(x,i))<1e-3)
+lam=lam-rho'*c(x,i);
+else
+rho=rho*2;
+end
+it=it+1;
+end
+end
+\end{verbatim}
+
+All of pure newton  and BFGS quasi newton converge to the true value for problem 6-9. For all problem, BFGS is a little bit faster than pure newton. Since all solver gives corrected result, a table showing result is not provided.
+\newpage
+\section{Proposal of Final Project: compare LASSO solvers}
+Tibshirani \cite{tibshirani1996regression} introduces LASSO regression 1996, which can estimating the coefficients and select variables at the same time. Instead of ordinary least square regression, the lasso \[
+\begin{array}{ll}
+minimize_\beta &||X\beta-Y||_2^2\\
+subject\, to & |\beta|_1<\tau
+\end{array}
+\]
+This can be rewritten as a unconstrained convex optimization problem:
+\[
+\begin{array}{ll}
+minimize_\beta &||X\beta-Y||_2^2+\lambda|\beta|_1
+\end{array}
+\]
+This can be solved by a BCL(Bound-Constrained Lagrangian Method).
+
+But LASSO wasn't popular when it is invented. Because this method is computational intensive and the computer that time didn't have power as in today. 
+
+Long with development of computer, new methods are invented to solve lasso problem. The most famous one is proposed by Efron et al\cite{efron2004least}: the least angle regression.
+
+I plan to compare these methods first on linear regression and maybe implement them on generalized linear regression model(GLM).
+\printbibliography[title=References]
+\end{document} 
