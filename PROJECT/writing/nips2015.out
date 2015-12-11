@@ -1,0 +1,8 @@
+\BOOKMARK [1][-]{section.1}{The Lasso Problem}{}% 1
+\BOOKMARK [1][-]{section.2}{Quadratic Programming}{}% 2
+\BOOKMARK [1][-]{section.3}{The LARS Algorithm}{}% 3
+\BOOKMARK [2][-]{subsection.3.1}{Notation}{section.3}% 4
+\BOOKMARK [2][-]{subsection.3.2}{The LARS algorithm}{section.3}% 5
+\BOOKMARK [2][-]{subsection.3.3}{Lasso Modification}{section.3}% 6
+\BOOKMARK [1][-]{section.4}{Code and Result}{}% 7
+\BOOKMARK [1][-]{section.5}{Reproduction of Paper Result}{}% 8
